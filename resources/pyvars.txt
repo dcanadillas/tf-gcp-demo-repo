@@ -1,0 +1,8 @@
+#[var name],[var value],[var type],[var is sensitive]
+gcp_project,hc-dcanadillas,terraform,false
+gcp_region,europe-west1,terraform,false
+gcp_zone,europe-west1-c,terraform,false
+nodes,2,terraform,false
+owner,dcanadillas,terraform,false
+cluster,dc-cluster,terraform,false
+machine,n1-standard-2,terraform,false

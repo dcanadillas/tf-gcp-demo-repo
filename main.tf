@@ -1,7 +1,7 @@
 terraform {
     required_version = "~> 0.12"
-    backend "remote"{ 
-    }
+    # backend "remote"{ 
+    # }
 }
 provider "google" {
   project     = var.gcp_project
@@ -17,9 +17,11 @@ resource "google_compute_network" "network" {
   name = "${var.cluster}-network"
 }
 
+
 # Subnet creation
 resource "google_compute_subnetwork" "subnet" {
   name          = "test-subnetwork"
+
   ip_cidr_range = "10.2.0.0/16"
   region        = var.gcp_region
   network       = google_compute_network.network.id

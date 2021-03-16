@@ -5,5 +5,5 @@ policy "enforce_mandatory_labels" {
 
 policy "restrict_vm_gcp" {
     source = "./restrict_vm_gcp.sentinel"
-    enforcement_level = "soft_mandatory"
+    enforcement_level = "soft-mandatory"
 }

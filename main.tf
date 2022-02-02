@@ -139,6 +139,7 @@ resource "google_compute_instance" "vm" {
   labels = {
     node = "my_node_-${count.index}"
     owner = var.owner
+    ttl = "4m"
   }
 }
 

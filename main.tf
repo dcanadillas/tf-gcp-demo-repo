@@ -1,8 +1,16 @@
 terraform {
-    required_version = "~> 0.12"
-    backend "remote"{ 
+  required_version = ">= 0.12"
+  backend "remote"{ 
+  }
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "4.9.0"
     }
+  }
 }
+
+    
 provider "google" {
   project     = var.gcp_project
   region      = var.gcp_region

@@ -45,12 +45,12 @@ resource "google_compute_address" "ip-address" {
 
 # Create firewall rules
 resource "google_compute_firewall" "default" {
-    name = "vault-rules"
+    name = "hashi-rules"
     network = google_compute_network.network.name
 
     allow {
         protocol = "tcp"
-        ports = ["80","443","8200"]
+        ports = ["80","443","8200","8500"]
     }
 
     source_ranges = ["0.0.0.0/0"]
@@ -138,6 +138,7 @@ resource "google_compute_instance" "vm" {
 
   labels = {
     node = "my_node_-${count.index}"
+    owner = var.owner
   }
 }
 

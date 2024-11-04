@@ -10,6 +10,9 @@ terraform {
   }
 }
 
+resource random_id "server" {
+  byte_length = 1
+}
 
 provider "google" {
   project = var.gcp_project
@@ -45,7 +48,7 @@ resource "google_compute_address" "ip-address" {
 
 # Create firewall rules
 resource "google_compute_firewall" "default" {
-  name    = "hashi-rules"
+  name    = "hashi-rules-${random_id.server.dec}"
   network = google_compute_network.network.name
 
   allow {

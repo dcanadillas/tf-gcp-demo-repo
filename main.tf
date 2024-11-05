@@ -111,7 +111,7 @@ resource "google_compute_instance" "vm" {
   machine_type = var.machine
   zone         = var.gcp_zone
 
-  tags = ["foo", "bar"]
+  tags = ["${var.owner}"]
 
   boot_disk {
     initialize_params {
